@@ -1,0 +1,32 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+const int arr_length=5;
+void func1(int *a,int length){
+    for (int i = 0; i < length; i++)
+    {
+        cout<<a[i]<<' ';
+    }
+    cout<<endl;
+}
+int main(){
+    int size=15;
+    int a[arr_length]={1,2,3,4,5};
+    int b[arr_length]={5,4,3,2,1};
+    int *p=new int[size];
+    for (int i = 0; i < 15; i++)
+    {
+        p[i]=i;
+    }
+    vector<int> myvec(p,p+size*sizeof(int)/sizeof(p));
+    myvec.resize(20);
+    for (vector<int>::iterator iter=myvec.begin();iter!=myvec.end() ; iter++)
+    {
+        cout<<*iter<<" ";
+    }
+    cout<<endl;
+    func1(a,arr_length);
+    func1(b,arr_length);
+    // func1(p,15);
+    return 0;
+}
